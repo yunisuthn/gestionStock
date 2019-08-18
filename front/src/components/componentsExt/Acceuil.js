@@ -7,7 +7,7 @@ export class Acceuil extends React.Component {
     return (
       <div>
         <NavBar/>
-          Acceuil
+          
         <Footer/>
       </div>
     );
