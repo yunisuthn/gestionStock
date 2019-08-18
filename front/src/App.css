@@ -1,0 +1,108 @@
+
+
+.Login {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 100px;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font: Arial, Helvetica, sans-serif;
+  font-size: 15px !important;
+}
+footer {
+  position: absolute; 
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  background: red;
+  font: Arial, Helvetica, sans-serif;
+  font-size: 15px !important;
+}
+
+header {
+  position: absolute; 
+  top:  0;
+  left: 0; 
+  right: 0;
+  border: 0 !important;
+}
+
+.logo {
+  width: 90px !important;
+  height: 50px !important;
+}
+
+ 
+.logo1{  
+  width: 200px;
+  height: 100px ;
+} 
+
+.ul{
+  background: rgba(255, 8, 0, 0.932);
+  height: 600px;
+  padding-top: 2%;
+  width: 18%;
+}
+li{
+  height: 20%;
+  font: 1em sans-serif;
+  font-size: 25px;
+}
+
+.rectangle {
+  height: 5px;
+  width: 80%;
+  background-color: rgb(255, 17, 0);
+  position:  relative;
+  
+  margin-top: 6.7%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rectangle1 {
+  height: 5px;
+  width: 90%;
+  background-color: rgb(0, 247, 255);
+  position:  absolute;
+  margin-left: 5%;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+
+.rectangle2 {
+  height: 4px;
+  width: 80%;
+  background-color: rgb(255, 17, 0);
+  position:  relative;
+  
+  margin-top: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* @media (max-width: 600px) {
+  .logo1{  
+    width: 90px !important;
+    height: 50px !important;
+  }
+  .ul{
+    background: rgba(255, 8, 0, 0.932);
+    height: 600px;
+    padding-top: 15%;
+    width: 30%;
+  }
+  li{
+    height: 10%;
+  }
+} */
