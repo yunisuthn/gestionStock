@@ -6,7 +6,7 @@ module.exports = function(app) {
 
 
     .post('/article', account.createArt)
-    .get('/article', account.findArt)
+    .get('/article/:noteId', account.findArt)
     .post('/sortie', account.sortieArt)
     .get('/sortie', account.findSortie)
 

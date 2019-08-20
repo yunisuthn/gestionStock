@@ -2,6 +2,10 @@ import React from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import API from "../../utils/API";
 
+import Navbar from "../componentsExt/NavBar";
+import Footer from "../componentsExt/Footer";
+
+
 export class Signup extends React.Component {
   state = {
     email: "",
@@ -19,9 +23,10 @@ export class Signup extends React.Component {
     try {
       const { data } = await API.signup({ nom, prenom, email, password });
       localStorage.setItem("token", data.token);
-      window.location = "/dashboard";
+      window.location = "/stock";
     } catch (error) {
-      console.error(error);
+      //console.error(error);
+      document.getElementById("err").value = "email ou mot de passe incorrect"
     }
   };
   handleChange = (event) => {
@@ -32,6 +37,8 @@ export class Signup extends React.Component {
   render() {
     const { nom, prenom, email, password, cpassword } = this.state;
     return (
+      <span className="container">
+        <Navbar/>  
       <div className="Login">
         <FormGroup controlId="nom" >
           <FormLabel>Nom</FormLabel>
@@ -76,10 +83,16 @@ export class Signup extends React.Component {
             type="password"
           />
         </FormGroup>
+        <FormGroup>
         <Button onClick={this.send} block  type="submit">
           Inscription
         </Button>
+        </FormGroup>
+        <FormLabel id="err"></FormLabel>
       </div>
+        <Footer/>
+
+      </span>
     );
   }
 }
