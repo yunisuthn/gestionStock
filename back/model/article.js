@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const Articl = mongoose.Schema({
     
     _id: {type:Number, required:true},
+    reference: { type: String, required:true},
     nomPiece: {type:String, required:true},
+    description: {type:String},
     prixUnit: { type: Number, required: true},
-    nbStock: { type: Number, required: true },
-    prixStock: { type: Number},
-    stockMin: { type: Number},
+    nbStock: { type: Number, required:true },
+    prixStock: { type: Number, required:true},
+    stockMin: { type: Number, required: true},
 
 },
 {

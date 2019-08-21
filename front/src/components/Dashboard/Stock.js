@@ -15,13 +15,13 @@ export class Stock extends React.Component {
 
   }
   componentDidMount() {
-      axios.get(`http://localhost:8800/article/${localStorage.id}`)
+      axios.get(`http://localhost:8800/article`)
           .then(response => {
-              console.log('user-article ==== ', response)
+              //console.log('user-article ==== ', response)
               this.setState({ profil: response.data });
           })
           .catch(function (error) {
-              console.log(error);
+              //console.log(error);
           })
   }
 
@@ -57,9 +57,9 @@ export class Stock extends React.Component {
                         {obj.stockMin}
                         </td>
                         <td>
-                            <Link to={"/edit/" + obj._id} className="btn btn-primary">Edit</Link>
+                            <Link to={"/editStock/" + obj._id} className="btn btn-primary">Edit</Link>
                         </td>
-                        {console.log(obj)}
+                        {/*console.log(obj)*/}
                     </tr>
 
                 })) : ('')

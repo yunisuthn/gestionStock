@@ -1,10 +1,6 @@
 
 import React from 'react';
 
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-
 import NavBar from "../NavBar";
 import Footer from "../Footer";
 import Dashboard from "../Dashboard";
@@ -14,15 +10,15 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
-export class AjoutS extends React.Component {
+export class EditM extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.onChangenomPiece = this.onChangenomPiece.bind(this);
-  this.onChangeprixUnit = this.onChangeprixUnit.bind(this);
-  this.onChangenbStock = this.onChangenbStock.bind(this);
-  this.onChangestockMin = this.onChangestockMin.bind(this);
-  this.onSubmit = this.onSubmit.bind(this);
+    super(props);
+    this.onChangenomPiece = this.onChangenomPiece.bind(this);
+    this.onChangeprixUnit = this.onChangeprixUnit.bind(this);
+    this.onChangenbStock = this.onChangenbStock.bind(this);
+    this.onChangestockMin = this.onChangestockMin.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
   //this.handle = this.handle.bind(this);
     this.state = {
@@ -35,6 +31,26 @@ export class AjoutS extends React.Component {
     // this.onChange = this.onChange.bind(this)
     // this.handle = this.handle.bind(this);
   }
+
+  componentDidMount() {
+    axios.get('http://localhost:8800/article/'+this.props.match.params.id)
+      .then(response => {
+          this.setState({ 
+              nomPiece: response.data.nomPiece,
+              prixUnit: response.data.prixUnit,
+              nbStock: response.data.nbStock,
+              stockMin: response.data.stockMin
+          });
+          console.log('this.props  === ', response.data.nomPiece)
+            
+      })
+      .catch(function (error) {
+          console.log(error);
+      })
+      
+  }
+
+  
   onChangenomPiece(e) {
     this.setState({
       nomPiece: e.target.value
@@ -56,26 +72,22 @@ export class AjoutS extends React.Component {
     })
   }
 
+
   onSubmit(e) {
     e.preventDefault();
     const obj = {
-      nomPiece: this.state.nomPiece,
-      prixUnit: this.state.prixUnit,
-      nbStock: this.state.nbStock,
-      stockMin: this.state.stockMin
+        nomPiece: this.state.nomPiece,
+        prixUnit: this.state.prixUnit,
+        nbStock: this.state.nbStock,
+        stockMin: this.state.stockMin
     };
-    axios.post('http://localhost:8800/article', obj)
+    //console.log('persone ============== ', obj);
+    
+    axios.post('http://localhost:8800/article/'+this.props.match.params.id, obj)
         .then(res => console.log(res.data));
     
-    this.setState({
-      nomPiece: "",
-      prixUnit: "",
-      nbStock: "",
-      stockMin: ""
-    })
+    this.props.history.push('/stock');
   }
-
-
 
 
   // componentDidMount() {
@@ -94,15 +106,15 @@ export class AjoutS extends React.Component {
             </div>
             <div className="col-md-6">
 
-              <div style={{ marginTop: 10 }}>
-                    <h3>Add New Business</h3>
+                <div style={{ marginTop: 10 }}>
+                    <h3>Update New Business</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label>nomPiece:  </label>
                             <input 
                               type="text" 
                               className="form-control" 
-                              value={this.state.nomPiecee}
+                              value={this.state.nomPiece}
                               onChange={this.onChangenomPiece}
                               />
                         </div>

@@ -14,7 +14,7 @@ import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
-export class AjoutS extends React.Component {
+export class AjoutM extends React.Component {
 
   constructor(props) {
   super(props);
