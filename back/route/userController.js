@@ -6,11 +6,11 @@ module.exports = function(app) {
 
 
     .post('/article', account.createArt)
-    .get('/article', account.findArt)
+    .get('/article/:noteId', account.findArt)
     .post('/sortie', account.sortieArt)
     .get('/sortie', account.findSortie)
 
-    .post('/article/:noteId', account.updateArticle)
+    .put('/article/:id', account.updateArticle)
     .post('/sortie/:noteId', account.updateSortie)
 
 };

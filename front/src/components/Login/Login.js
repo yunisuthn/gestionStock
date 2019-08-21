@@ -22,8 +22,10 @@ export class Login extends React.Component {
     }
     try {
       const { data } = await API.login(email, password);
-      localStorage.setItem("token", data.token);
-      window.location = "/dashboard";
+      //localStorage.setItem("token", data.token);
+
+      localStorage.setItem('id', data.data.id);
+      window.location = "/stock";
     } catch (error) {
       //console.log('error', error);
       document.getElementById("err").value = "email ou mot de passe incorrect"

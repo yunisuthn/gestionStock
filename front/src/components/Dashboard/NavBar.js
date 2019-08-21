@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 // MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { Link } from 'react-router-dom'
+
 
 class NavbarPage extends Component {
 state = {
@@ -25,12 +25,10 @@ onClick() {
 render() {
   return (
     <header>
-      <div className="site">
-        <span className="sitesoratr">
-          YUNISU PIECE
-        </span>
-        <Link to="/connecter" className='dashbrd'>se connecter</Link>
-      </div>
+        <div className="site">yunisupiece.herokuapp.com</div>
+        <div className="rectangle1"></div>
+        <div className="rectangle"></div>
+        <div className="rectangle2"></div>
     </header>
   );
   }

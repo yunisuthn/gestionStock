@@ -263,8 +263,31 @@ exports.sortieArt = (req, res) => {
 
 
 exports.updateArticle = (req, res) => {
+
+
+    Article.findById(req.params.id, function(err, article) {
+        if (!article)
+          res.status(404).send("data is not found");
+        else {
+    
+            article.nomPiece = req.body.nomPiece;
+            article.prixUnit = req.body.prixUnit;
+            //date: req.body.date,
+    
+            article.nbStock = req.body.nbStock;
+            article.prixStock = req.body.prixUnit * req.body.nbStock;
+            article.stockMin = req.body.stockMin;
+            
+            article.save().then(businArticleess => {
+              res.json('Update complete');
+          })
+          .catch(err => {
+                res.status(400).send("unable to update the database");
+          });
+        }
+      });
     // Validate Request
-    if (!req.body.nomPiece) {
+    /* if (!req.body.nomPiece) {
         return res.status(400).send({
             message: "article content can not be empty"
         });
@@ -296,7 +319,7 @@ exports.updateArticle = (req, res) => {
             return res.status(500).send({
                 message: "Error updating note with id " + req.params.noteId
             });
-        });
+        }); */
 }
 
 

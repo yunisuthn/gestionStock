@@ -23,7 +23,7 @@ export class Signup extends React.Component {
     try {
       const { data } = await API.signup({ nom, prenom, email, password });
       localStorage.setItem("token", data.token);
-      window.location = "/dashboard";
+      window.location = "/stock";
     } catch (error) {
       //console.error(error);
       document.getElementById("err").value = "email ou mot de passe incorrect"

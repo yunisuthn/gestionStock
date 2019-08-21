@@ -46,20 +46,18 @@ header {
 } 
 
 .ul{
-  background: rgba(255, 8, 0, 0.932);
-  height: 600px;
-  padding-top: 2%;
   width: 18%;
+  margin-top: 10%;
 }
 li{
   height: 20%;
   font: 1em sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .rectangle {
   height: 5px;
-  width: 80%;
+  width: 90%;
   background-color: rgb(255, 17, 0);
   position:  relative;
   
@@ -68,7 +66,7 @@ li{
   margin-right: auto;
 }
 
-.rectangle1 {
+/* .rectangle1 {
   height: 5px;
   width: 90%;
   background-color: rgb(0, 247, 255);
@@ -76,12 +74,12 @@ li{
   margin-left: 5%;
   margin-right: auto;
   margin-top: 1%;
-}
+} */
 
 
 .rectangle2 {
   height: 4px;
-  width: 80%;
+  width: 90%;
   background-color: rgb(255, 17, 0);
   position:  relative;
   
@@ -92,14 +90,58 @@ li{
 
 .site {
   height: 60px;
-  width: 40%;
+  width: 100%;
   background:  rgb(0, 247, 255);
   margin-top:  2%;
   border-radius: 10px;
+}
+
+.sitesoratr{
   font-size: 40px;
   color: #fff;
-  margin-left: 10%;
+
 }
+
+.Dashboard{
+  background: darkgray;
+  margin-top: 200px;
+}
+
+@media (max-width: 1140px) {
+  
+  .rectangle {
+    height: 5px !important;
+    width: 90% !important;
+    background-color: rgb(255, 17, 0) !important;
+    position:  relative !important;
+    
+    margin-top: 5px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+/*   
+  .rectangle1 {
+    height: 500px !important;
+    width: 90% !important;
+    background-color: rgb(0, 247, 255) !important;
+    position:  absolute !important;
+    margin-left: 5% !important;
+    margin-right: auto !important;
+    margin-top: 1% !important;
+  } */
+  
+  
+  .rectangle2 {
+    height: 4px !important;
+    width: 90% !important;
+    background-color: rgb(255, 17, 0) !important;
+    position:  relative !important;
+    
+    margin-top: 1px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  }
 /* @media (max-width: 600px) {
   .logo1{  
     width: 90px !important;
