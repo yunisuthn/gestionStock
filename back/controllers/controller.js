@@ -57,7 +57,6 @@ exports.signup = (req, res) => {
 
 exports.login = (req, res) => {
     if (!req.body.email || !req.body.password) {
-        //Le cas où l'email ou bien le password ne serait pas soumit ou nul
         res.status(400).json({
             "text": "Requête invalide"
         })
@@ -166,6 +165,43 @@ exports.findOneArt = (req, res) => {
     });
 };
 
+
+
+exports.updateArticle = (req, res) => {
+
+
+    Article.findById(req.params.id, function(err, article) {
+        if (!article)
+          res.status(404).send("data is not found");
+        else {
+    
+            article.reference = req.body.nomPiece,
+            article.nomPiece = req.body.nomPiece,
+            article.description = req.body.description,
+            article.prixUnit = req.body.prixUnit,
+            article.nbStock = req.body.nbStock,
+            article.prixStock = req.body.prixUnit * req.body.nbStock,
+            article.stockMin = req.body.stockMin,
+
+            
+            article.save().then(businArticleess => {
+              res.json('Update complete');
+          })
+          .catch(err => {
+                res.status(400).send("unable to update the database");
+          });
+        }
+      });
+}
+
+exports.deleteArticle = (req, res) => {
+
+
+    Article.findByIdAndRemove({_id: req.params.id}, function(err, business){
+        if(err) res.json(err);
+        else res.json('Successfully removed');
+    });
+}
 exports.createEntrer = (req, res) => {
     Article.find()
         .then(art => {
@@ -395,7 +431,7 @@ exports.createSortie = (req, res) => {
  */
 };
 
-
+/* 
 exports.updateArticle = (req, res) => {
 
 
@@ -453,8 +489,8 @@ exports.updateArticle = (req, res) => {
             return res.status(500).send({
                 message: "Error updating note with id " + req.params.noteId
             });
-        }); */
-}
+        }); 
+} */
 
 
 /* exports.updateSortie = (req, res) => {
