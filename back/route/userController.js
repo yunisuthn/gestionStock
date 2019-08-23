@@ -12,5 +12,7 @@ module.exports = function(app) {
 
     .post('/entrer', account.createEntrer)
     .post('/sortie', account.createSortie)
+    //.post('/entrerSortie', account.entrerSortie)
+    .get('/entrerSortie', account.entrerSortie)
 
 };

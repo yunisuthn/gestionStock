@@ -8,7 +8,6 @@ import Dashboard from "../Dashboard";
 
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
 
 export class EditM extends React.Component {
 

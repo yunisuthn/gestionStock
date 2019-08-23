@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+//import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+//import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
 import NavBar from "../NavBar";
 import Footer from "../Footer";
@@ -12,7 +12,7 @@ import Dashboard from "../Dashboard";
 
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 export class AjoutM extends React.Component {
 
