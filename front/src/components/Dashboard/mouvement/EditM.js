@@ -1,12 +1,15 @@
 
 import React from 'react';
-import axios from 'axios';
 
 import NavBar from "../NavBar";
 import Footer from "../Footer";
 import Dashboard from "../Dashboard";
 
-export class EditS extends React.Component {
+
+import axios from 'axios';
+
+
+export class EditM extends React.Component {
 
   constructor(props) {
     super(props);

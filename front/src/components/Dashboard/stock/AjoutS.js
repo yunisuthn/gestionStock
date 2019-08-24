@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+///import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
-import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+//import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
 import NavBar from "../NavBar";
 import Footer from "../Footer";
@@ -12,28 +12,25 @@ import Dashboard from "../Dashboard";
 
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 export class AjoutS extends React.Component {
 
   constructor(props) {
-  super(props);
-  this.onChangenomPiece = this.onChangenomPiece.bind(this);
-  this.onChangeprixUnit = this.onChangeprixUnit.bind(this);
-  this.onChangenbStock = this.onChangenbStock.bind(this);
-  this.onChangestockMin = this.onChangestockMin.bind(this);
-  this.onSubmit = this.onSubmit.bind(this);
+    super(props);
+    this.onChangenomPiece = this.onChangenomPiece.bind(this);
+    this.onChangeprixUnit = this.onChangeprixUnit.bind(this);
+    this.onChangenbStock = this.onChangenbStock.bind(this);
+    this.onChangestockMin = this.onChangestockMin.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-  //this.handle = this.handle.bind(this);
-      this.state = {
+    this.state = {
       nomPiece: '',
       prixUnit: '',
       nbStock: '',
       stockMin: ''
 
     };
-    // this.onChange = this.onChange.bind(this)
-    // this.handle = this.handle.bind(this);
   }
   onChangenomPiece(e) {
     this.setState({
@@ -78,9 +75,9 @@ export class AjoutS extends React.Component {
 
 
 
-  componentDidMount() {
-    console.log('this.props.location.pathname', localStorage.id);
-  }
+  // componentDidMount() {
+  //   console.log('this.props.location.pathname', localStorage.id);
+  // }
 
   render() {
     return (

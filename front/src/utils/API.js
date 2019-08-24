@@ -1,30 +1,33 @@
-import axios from "axios";
+import axios from 'axios';
 const headers = {
-  "Content-Type": "application/json"
-};
-const burl = "http://localhost:8800";
+    'Content-Type': 'application/json'
+}
+const burl = "http://localhost:8800"
 
 export default {
-  login: function(email, password) {
-    return axios.post(
-      `${burl}/login`,
-      {
-        email,
-        password
-      },
-      {
-        headers: headers
-      }
-    );
-  },
-  signup: function(send) {
-    return axios.post(`${burl}/signup`, send, { headers: headers });
-  },
+    login : function( email,password) {
+        
+        return (
+            axios.post(burl + '/login',{
+            'email' : email,
+            'password' : password
+        },{
+            headers: headers
+        }) 
+        
+        )/* .then(
+            (res)=>{console.log('test axios', res)}
+        ) */
+    },
+    signup : function(send){
+        return axios.post(burl + '/signup',send,{headers: headers})
+    },
+    
+    isAuth : function() {
+        return (localStorage.getItem('id') !== null);
+    },
+    logout : function() {
+        localStorage.clear();
+    }
+}
 
-  isAuth: function() {
-    return localStorage.getItem("token") !== null;
-  },
-  logout: function() {
-    localStorage.clear();
-  }
-};
