@@ -6,10 +6,7 @@ import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 
 import axios from 'axios';
-
-import { confirmAlert } from 'react-confirm-alert'; 
-import 'react-confirm-alert/src/react-confirm-alert.css'
-
+import {Link} from "react-router-dom"
 export class Mouvement extends React.Component {
   // disconnect = () => {
   //   API.logout();
@@ -18,74 +15,23 @@ export class Mouvement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.onChangenumFacture = this.onChangenumFacture.bind(this);
+/*     this.onChangenumFacture = this.onChangenumFacture.bind(this);
     this.onChangefournisseur = this.onChangefournisseur.bind(this);
     this.onChangereference = this.onChangereference.bind(this);
     this.onChangenombreE = this.onChangenombreE.bind(this);
-    this.onChangenombreS = this.onChangenombreS.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onChangenombreS = this.onChangenombreS.bind(this); */
+//    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      numFacture: '',
+/*       numFacture: '',
       fournisseur: '',
       reference: '',
       nombreE: '',
-      nombreS: '',
+      nombreS: '', */
       entrer: []
 
     };
   }
-  onChangenumFacture(e) {
-    this.setState({
-      numFacture: e.target.value
-    });
-    /* console.log('====================================');
-    console.log('chifre', this.state.numFacture);
-    console.log('===================================='); */
-  }
-  onChangefournisseur(e) {
-    this.setState({
-      fournisseur: e.target.value
-    })  
-  }
-  onChangereference(e) {
-    this.setState({
-      reference: e.target.value
-    })
-  }
-  onChangenombreE(e) {
-    this.setState({
-      nombreE: e.target.value
-    })
-  }
-  onChangenombreS(e) {
-    this.setState({
-      nombreS: e.target.value
-    })
-  }
-
-  onSubmit(e) {e.preventDefault();
-    const obj = {
-      numFacture: this.state.numFacture,
-      fournisseur: this.state.fournisseur,
-      reference: this.state.reference,
-      nombreE: this.state.nombreE,
-      nombreS: this.state.nombreS
-    };
-    axios.post('http://localhost:8800/entrer', obj)
-        .then(res => console.log(res.data));
-    
-    this.setState({
-      numFacture: "",
-      fournisseur: "",
-      reference: "",
-      nombreE: "",
-      nombreS: ""
-    })
-  }
-
-
-  
   componentDidMount() {
     axios.get(`http://localhost:8800/entrerSortie`)
       .then(response => {
@@ -107,7 +53,7 @@ export class Mouvement extends React.Component {
             <th>TYPE</th>
             <th>FACTURE</th>
             <th>FOURNISSEUR</th>
-            <th>NUMERO ARTICLE</th>
+            <th>REFERENCE</th>
             <th>NOMBRE</th>
           </tr>
         </thead>
@@ -134,7 +80,7 @@ export class Mouvement extends React.Component {
   }
 
 
-  ajouter = () => (
+/*   ajouter = () => (
 		confirmAlert({
 			customUI: ({ onClose }) => {
 				//var data = {this.props.post.prenom}
@@ -195,7 +141,7 @@ export class Mouvement extends React.Component {
 			}
 		})
   )
-  
+ */  
   render() {
     return (
       <div className="container-fluid">
@@ -207,8 +153,8 @@ export class Mouvement extends React.Component {
           </div>
           <div className="col-md-6">
 {console.log('====================================' , localStorage.id)}
-		        <button onClick={()=>this.ajouter()} className={'ajout btn btn-success'}> Ajouter</button>
-            {/* <Link to={"/ajoutMouvement"} className="btn btn-primary">Ajout</Link> */}
+{/* 		        <button onClick={()=>this.ajouter()} className={'ajout btn btn-success'}> Ajouter</button> */}
+            <Link to={"/ajoutMouvement"} className="btn btn-primary">Ajout</Link>
 
             {this.liste()}
           </div>

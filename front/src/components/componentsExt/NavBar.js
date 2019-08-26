@@ -27,7 +27,7 @@ render() {
     <header>
       <div className="site">
         <span className="sitesoratr">
-          YUNISU PIECE
+          <center> GESTIONNEZ VOTRE MAGASIN DU MOTO ICI</center>
         </span>
         <Link to="/connecter" className='dashbrd'>se connecter</Link>
       </div>
