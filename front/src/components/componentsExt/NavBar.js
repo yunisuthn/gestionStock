@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 // MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class NavbarPage extends Component {
 state = {
@@ -27,9 +27,9 @@ render() {
     <header>
       <div className="site">
         <span className="sitesoratr">
-          YUNISU PIECE
+          <center> GESTIONNEZ VOTRE MAGASIN DU MOTO ICI</center>
         </span>
-        <Link to="/connecter" className='dashbrd'>se connecter</Link>
+        {/* <Link to="/connecter" className='dashbrd'>se connecter</Link> */}
       </div>
     </header>
   );

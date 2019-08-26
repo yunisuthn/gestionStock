@@ -32,57 +32,6 @@ export class Mouvement extends React.Component {
 
     };
   }
-/*   onChangenumFacture(e) {
-    this.setState({
-      numFacture: e.target.value
-    });
-    /* console.log('====================================');
-    console.log('chifre', this.state.numFacture);
-    console.log('===================================='); *---
-  }
-  onChangefournisseur(e) {
-    this.setState({
-      fournisseur: e.target.value
-    })  
-  }
-  onChangereference(e) {
-    this.setState({
-      reference: e.target.value
-    })
-  }
-  onChangenombreE(e) {
-    this.setState({
-      nombreE: e.target.value
-    })
-  }
-  onChangenombreS(e) {
-    this.setState({
-      nombreS: e.target.value
-    })
-  }
-
-  onSubmit(e) {e.preventDefault();
-    const obj = {
-      numFacture: this.state.numFacture,
-      fournisseur: this.state.fournisseur,
-      reference: this.state.reference,
-      nombreE: this.state.nombreE,
-      nombreS: this.state.nombreS
-    };
-    axios.post('http://localhost:8800/entrer', obj)
-        .then(res => console.log(res.data));
-    
-    this.setState({
-      numFacture: "",
-      fournisseur: "",
-      reference: "",
-      nombreE: "",
-      nombreS: ""
-    })
-  }
-
-
- */  
   componentDidMount() {
     axios.get(`http://localhost:8800/entrerSortie`)
       .then(response => {
@@ -104,7 +53,7 @@ export class Mouvement extends React.Component {
             <th>TYPE</th>
             <th>FACTURE</th>
             <th>FOURNISSEUR</th>
-            <th>NUMERO ARTICLE</th>
+            <th>REFERENCE</th>
             <th>NOMBRE</th>
           </tr>
         </thead>
