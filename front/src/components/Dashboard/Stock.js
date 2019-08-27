@@ -34,7 +34,7 @@ export class Stock extends React.Component {
         msg = "unchecked";
     }*/
     return (
-      <table className="table">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th>NOM PIECE</th>
@@ -78,7 +78,7 @@ export class Stock extends React.Component {
           <div className="col-md-2">
             <Dashboard />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 tab">
             <Link to={"/ajoutStock"} className="btn btn-primary">Ajout</Link>
 
             {this.liste()}

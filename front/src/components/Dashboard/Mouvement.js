@@ -151,9 +151,7 @@ export class Mouvement extends React.Component {
           <div className="col-md-2">
             <Dashboard />
           </div>
-          <div className="col-md-6">
-{console.log('====================================' , localStorage.id)}
-{/* 		        <button onClick={()=>this.ajouter()} className={'ajout btn btn-success'}> Ajouter</button> */}
+          <div className="col-md-6 tab">
             <Link to={"/ajoutMouvement"} className="btn btn-primary">Ajout</Link>
 
             {this.liste()}

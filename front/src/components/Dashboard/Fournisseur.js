@@ -12,21 +12,23 @@ export class Fournisseur extends React.Component {
   // };
   render() {
     return (
+
       <div className="container-fluid">
-        <NavBar/>
-          <div class="row Dashboard">
-            <div class="col-md-3">
-              <Dashboard/>
-            </div>
-            <div class="col-md-9">
-              fournisseur
-            </div>
+        
+        <NavBar />
+        <div className="row Dashboard">
+          <div className="col-md-2">
+            <Dashboard />
           </div>
-        <Footer/>
+          <div className="col-md-6">
 
+            fournisseur
+          </div>
+        </div>
+        <Footer />
 
-   
       </div>
+
     );
   }
 }

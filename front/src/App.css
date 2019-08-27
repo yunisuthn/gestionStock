@@ -1,10 +1,8 @@
-
-
 .Login {
   width: 100%;
   max-width: 600px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 html {
   height: 100%;
@@ -50,6 +48,7 @@ header {
   width: 18%;
   margin-top: 10%;
 }
+
 li{
   height: 20%;
   font: 1em sans-serif;
@@ -108,8 +107,93 @@ li{
   margin-top: 200px;
 }
 
-@media (max-width: 1140px) {
+
+.liste{
+  background: #fff;
+  border: black;
+}
+
+td{
+  left: 20px;
+  width: 200px;
+  font-size: 60px;
+}
+
+@media (max-width: 808px) {
   
+  .sitesoratr{
+    font-size: 20px;
+    color: #fff;
+    text-align :center;
+  }
+}
+
+.tab{
+  margin-left: 100px;
+
+}
+@media (max-width: 765px, 307px) {
+  .tab{
+    margin-left: 0px !important;
+  }
+}
+
+@media (max-width: 307px) {
+  .site {
+    height: 60px;
+    width: 110%;
+    background:  rgb(0, 247, 255);
+    margin-top:  2%;
+    border-radius: 10px;
+  }
+
+  .Footer {
+    position: absolute; 
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    width: 110%;
+    background: red;
+    font: Arial, Helvetica, sans-serif;
+    font-size: 15px !important;
+  }
+}
+
+
+
+@media (max-width: 807px, 400px) {
+  
+  .sitesoratr{
+    font-size: 6000px;
+    color: #fff;
+    text-align :center;
+  }
+  .rectangle {
+    height: 5px !important;
+    width: 90% !important;
+    background-color: rgb(102, 70, 68) !important;
+    position:  relative !important;
+    
+    margin-top: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+
+@media (max-width: 1043px) {
+  .site{
+    width: 20%;
+  }
+}
+@media (max-width: 1145px) {
+  .tab{
+    margin-left: 10px;
+  }
+  .site{
+    width: 100%;
+  }
   .rectangle {
     height: 5px !important;
     width: 90% !important;
@@ -142,42 +226,13 @@ li{
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  }
-
-  .liste{
-    background: #fff;
-    border: black;
-  }
-
-  td{
-    left: 20px;
-    width: 200px;
-  }
-  @media (max-width: 768px) {
-    
-    .sitesoratr{
-      font-size: 20px;
-      color: #fff;
-      text-align :center;
-    }
-  }
-/* @media (max-width: 600px) {
-  .logo1{  
-    width: 90px !important;
-    height: 50px !important;
-  }
-  .ul{
-    background: rgba(255, 8, 0, 0.932);
-    height: 600px;
-    padding-top: 15%;
-    width: 30%;
-  }
-  li{
-    height: 10%;
-  }
-} */
+}
 
 
+.navbar li>.active {
+  background-color: rgb(223, 222, 217);
+  font-weight:bold;
+}
 
 /*footer*/
 

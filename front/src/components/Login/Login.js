@@ -57,19 +57,17 @@ export class Login extends React.Component {
           <Navbar />
           </div>
             <div className="Login">
-                <div className=' col-md-8'>
-                </div>
                 <MDBContainer>
                     <MDBRow>
-                        <MDBCol md="6" className='login' >
+                        <MDBCol md="" >
 
                             <FormGroup controlId="email"  bsSize="large">
                                 <FormLabel className='couleur'>Email</FormLabel>
-                                <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange} />
+                                <FormControl autoFocus type="email" value={this.state.email}  className='login'onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup controlId="password" bsSize="large">
                                 <FormLabel className='couleur'>Password</FormLabel>
-                                <FormControl value={this.state.password} onChange={this.handleChange} type="password" />
+                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login' type="password" />
                             </FormGroup>
 
                             <FormGroup  bsSize="large">
@@ -91,7 +89,7 @@ export class Login extends React.Component {
 
                         </MDBCol>
                     </MDBRow>
-                </MDBContainer>
+                </MDBContainer> 
             </div>
               <div class=" container-fluid  "  id='div'>
                     <Footer />

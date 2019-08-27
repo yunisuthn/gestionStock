@@ -10,9 +10,6 @@ export class Acceuil extends React.Component {
       <div>
         <NavBar/>
           
-        <div class="rectangle1"></div>
-        <div class="rectangle"></div>
-        <div class="rectangle2"></div>
         <Footer/>
       </div>
     );
