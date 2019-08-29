@@ -136,13 +136,9 @@ exports.login = (req, res) => {
 
 exports.createArt = (req, res) => {
     if (!req.body.nomPiece) {
-
         console.log('console.log 2 ' + req.body.nomPiece);
-
-
         return res.status(400).send({
             message: "nomPiece content can not be empty"
-
         });
     }
 
@@ -165,6 +161,7 @@ exports.createArt = (req, res) => {
                 nbStock: 0,
                 prixStock: 0,
                 stockMin: req.body.stockMin,
+                user: req.body.user
             });
 
             art.save()
@@ -185,7 +182,21 @@ exports.createArt = (req, res) => {
 };
 
 exports.findArt = (req, res) => {
+    var data = []
     Article.find()
+        .then(notes => {
+            for (let i = 0; i < notes.length; i++) {
+                if (notes[i].user == req.params.noteId) {
+                    data.push(notes[i]);
+                }
+            }
+            res.send(data);
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || 'some error'
+            });
+        });
+    /* Article.find()
         .then(art => {
             for (let i = 0; i < art.length; i++) {
                 res.send(art);
@@ -194,7 +205,7 @@ exports.findArt = (req, res) => {
             res.status(500).send({
                 message: err.message || 'some error'
             });
-        });
+        }); */
 };
 
 
@@ -216,21 +227,21 @@ exports.updateArticle = (req, res) => {
             res.status(404).send("data is not found");
         else {
 
-            article.reference = req.body.nomPiece,
-                article.nomPiece = req.body.nomPiece,
-                article.description = req.body.description,
-                article.prixUnit = req.body.prixUnit,
-                article.nbStock = req.body.nbStock,
-                article.prixStock = req.body.prixUnit * req.body.nbStock,
-                article.stockMin = req.body.stockMin,
+            article.reference = req.body.reference,
+            article.nomPiece = req.body.nomPiece,
+            article.description = req.body.description,
+            article.prixUnit = req.body.prixUnit,
+            article.nbStock = req.body.nbStock,
+            article.prixStock = req.body.prixUnit * req.body.nbStock,
+            article.stockMin = req.body.stockMin,
 
 
-                article.save().then(businArticleess => {
-                    res.json('Update complete');
-                })
-                    .catch(err => {
-                        res.status(400).send("unable to update the database");
-                    });
+            article.save().then(businArticleess => {
+                res.json('Update complete');
+            })
+            .catch(err => {
+                res.status(400).send("unable to update the database");
+            });
         }
     });
 }
@@ -250,12 +261,10 @@ exports.createEntrer = (req, res) => {
                 console.log('req.body.refence.body====================================', req.body.reference);
                 console.log('art.length ', art.length);
                 console.log('art[i].reference====================================', art[i].reference);
-                if (art[i].reference == req.body.reference) {
-
+                if (art[i].reference == req.body.reference){
                     console.log('console.log 2 ' + req.body.reference);
                     console.log('console.log id ' + art[i]._id);
                     Article.findByIdAndUpdate(art[i]._id, {
-
                         nbStock: parseInt(art[i].nbStock) + parseInt(req.body.nombreE),
                         prixStock: art[i].prixUnit * (art[i].nbStock + req.body.nombreE)
                     }, { new: true })
@@ -291,7 +300,8 @@ exports.createEntrer = (req, res) => {
                                 reference: req.body.reference,
                                 numFacture: req.body.numFacture,
                                 fournisseur: req.body.fournisseur,
-                                nombreE: req.body.nombreE
+                                nombreE: req.body.nombreE,
+                                user: req.body.user
                             });
 
                             art.save()
@@ -331,7 +341,8 @@ exports.createEntrer = (req, res) => {
                                 reference: req.body.reference,
                                 numFacture: req.body.numFacture,
                                 fournisseur: req.body.fournisseur,
-                                nombre: req.body.nombreE
+                                nombre: req.body.nombreE,
+                                user: req.body.user
                             });
 
                             art.save()
@@ -406,7 +417,8 @@ exports.createSortie = (req, res) => {
                                 _id: idautom,
                                 numFacture: req.body.numFacture,
                                 reference: req.body.reference,
-                                nombreS: req.body.nombreS
+                                nombreS: req.body.nombreS,
+                                user: req.body.user,
 
 
                             });
@@ -442,7 +454,8 @@ exports.createSortie = (req, res) => {
                                 reference: req.body.reference,
                                 numFacture: req.body.numFacture,
                                 fournisseur: null,
-                                nombre: req.body.nombreS
+                                nombre: req.body.nombreS,
+                                user: req.body.user,
                             });
 
                             art.save()
@@ -552,16 +565,42 @@ exports.createSortie = (req, res) => {
 };
 
 exports.entrerSortie = (req, res) => {
+    var data = []
     EntrerSortie.find()
-        .then(art => {
-            for (let i = 0; i < art.length; i++) {
-                res.send(art);
+        .then(notes => {
+            for (let i = 0; i < notes.length; i++) {
+                if (notes[i].user == req.params.noteId) {
+                    data.push(notes[i]);
+                }
             }
+            res.send(data);
         }).catch(err => {
             res.status(500).send({
                 message: err.message || 'some error'
             });
         });
+
+
+
+   /*  var data = []
+    EntrerSortie.find()
+        .then(art => {
+            for (let i = 0; i < art.length; i++) {
+                if (art[i].user == req.params.noteId) {
+                    data.push(art[i]);
+                }
+            }
+            console.log('====================================');
+            console.log(art);
+            console.log('====================================');
+            /* for (let i = 0; i < art.length; i++) {
+                res.send(art);
+            } * /
+        }).catch(err => {
+            res.status(500).send({
+                message: err.message || 'some error'
+            });
+        }); */
 };
 /*
 exports.updateArticle = (req, res) => {

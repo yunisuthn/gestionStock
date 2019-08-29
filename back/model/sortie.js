@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
         //date: req.body.date,
         reference: { type: String, required: true},
         nombreS: { type: Number, required: true},
+        user: { type: Number, required: true},
 
     },
     {

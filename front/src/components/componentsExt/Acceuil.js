@@ -3,13 +3,14 @@
 import React from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import moto from '../DSC_0376.JPG';
 export class Acceuil extends React.Component {
   
   render() {
     return (
       <div>
-        <NavBar/>
-          
+        <NavBar/>  
+          <img className = 'logo col-md-2' src={moto} alt="Logo" />
         <Footer/>
       </div>
     );

@@ -20,14 +20,12 @@ export class AjoutS extends React.Component {
     super(props);
     this.onChangenomPiece = this.onChangenomPiece.bind(this);
     this.onChangeprixUnit = this.onChangeprixUnit.bind(this);
-    this.onChangenbStock = this.onChangenbStock.bind(this);
     this.onChangestockMin = this.onChangestockMin.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       nomPiece: '',
       prixUnit: '',
-      nbStock: '',
       stockMin: ''
 
     };
@@ -42,11 +40,6 @@ export class AjoutS extends React.Component {
       prixUnit: e.target.value
     })  
   }
-  onChangenbStock(e) {
-    this.setState({
-      nbStock: e.target.value
-    })
-  }
   onChangestockMin(e) {
     this.setState({
       stockMin: e.target.value
@@ -58,8 +51,8 @@ export class AjoutS extends React.Component {
     const obj = {
       nomPiece: this.state.nomPiece,
       prixUnit: this.state.prixUnit,
-      nbStock: this.state.nbStock,
-      stockMin: this.state.stockMin
+      stockMin: this.state.stockMin,
+      user: localStorage.id
     };
     axios.post('http://localhost:8800/article', obj)
         .then(res => console.log(res.data));
@@ -67,7 +60,6 @@ export class AjoutS extends React.Component {
     this.setState({
       nomPiece: "",
       prixUnit: "",
-      nbStock: "",
       stockMin: ""
     })
   }
@@ -89,17 +81,17 @@ export class AjoutS extends React.Component {
             <div className="col-md-2">
               <Dashboard/>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 tab">
 
               <div style={{ marginTop: 10 }}>
-                    <h3>Add New Business</h3>
+                    <h3>AJOUTER UN NOUVEAU STOCK</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <label>nomPiece:  </label>
                             <input 
                               type="text" 
                               className="form-control" 
-                              value={this.state.nomPiecee}
+                              value={this.state.nomPiece}
                               onChange={this.onChangenomPiece}
                               />
                         </div>
@@ -109,14 +101,6 @@ export class AjoutS extends React.Component {
                               className="form-control"
                               value={this.state.prixUnit}
                               onChange={this.onChangeprixUnit}
-                              />
-                        </div>
-                        <div className="form-group">
-                            <label>nbStock: </label>
-                            <input type="text" 
-                              className="form-control"
-                              value={this.state.nbStock}
-                              onChange={this.onChangenbStock}
                               />
                         </div>
                         <div className="form-group">

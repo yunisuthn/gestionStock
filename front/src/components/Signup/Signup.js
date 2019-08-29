@@ -5,7 +5,7 @@ import API from '../../utils/API';
 import Navbar from '../componentsExt/NavBar';
 import Footer from '../componentsExt/Footer';
 
-import { MDBContainer,  MDBCol } from 'mdbreact';
+import { MDBContainer, MDBCol } from 'mdbreact';
 
 export class Signup extends React.Component {
     constructor(props) {
@@ -45,13 +45,13 @@ export class Signup extends React.Component {
             console.log('====================================');
             console.log('id ==== ', data.data.id);
             console.log('====================================');
-            if(!data.data.id){
+            if (!data.data.id) {
+                window.location = '/stock'
+            } else {
                 window.location = '/signup'
                 document.getElementById("error").innerHTML = "Email ou mot de passe incorrect !"
-            }else{
-                window.location = '/stock'
             }
-            
+
             // window.location = `/dashboard/${data.data.id}`
         }, function (error) {
             console.log(error);
@@ -65,7 +65,7 @@ export class Signup extends React.Component {
     }
 
     signin = event => {
-        window.location = "/connect"
+        window.location = "/connecter"
     }
     render() {
         return (
@@ -74,55 +74,57 @@ export class Signup extends React.Component {
                     <div class=" row ">
                         <Navbar />
                     </div>
-                  <MDBContainer>
-                        <MDBCol className='center-block' >
-                            <FormGroup className='row' controlId="nom" bsSize="large">
-                                <FormLabel className='couleur col-md-2'>Nom</FormLabel>
-                                <FormControl autoFocus className=' col-md-4' type="text" value={this.state.nom} onChange={this.handleChange} />
-                            </FormGroup>
-                            <FormGroup className='row' controlId="prenom" bsSize="large">
-                                <FormLabel className='couleur col-md-2'>Prénom</FormLabel>
-                                <FormControl autoFocus className=' col-md-4' type="text" value={this.state.prenom} onChange={this.handleChange} />
-                            </FormGroup>
-                            <FormGroup className='row' controlId="email" bsSize="large">
-                                <FormLabel className='couleur col-md-2'>Email</FormLabel>
-                                <FormControl autoFocus className=' col-md-4' type="email" value={this.state.email} onChange={this.handleChange} />
-                            </FormGroup>
-                            <FormGroup className='row' controlId="password" bsSize="large">
-                                <FormLabel className='couleur col-md-2'>Password</FormLabel>
-                                <FormControl  className=' col-md-4' value={this.state.password} onChange={this.handleChange} type="password" />
-                            </FormGroup>
-                            <FormGroup className='row' controlId="cpassword" bsSize="large">
-                                <FormLabel className='couleur col-md-2'>Confirm Password</FormLabel>
-                                <FormControl className=' col-md-4' value={this.state.cpassword} onChange={this.handleChange} type="password" />
-                            </FormGroup>
+                    <div className="Login">
+                        <MDBContainer>
+                            <MDBCol className='center-block' >
+                                <FormGroup className='row' controlId="nom" bsSize="large">
+                                    <FormLabel className='couleur'>Nom</FormLabel>
+                                    <FormControl autoFocus className=' ' type="text" value={this.state.nom} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup className='row' controlId="prenom" bsSize="large">
+                                    <FormLabel className='couleur '>Prénom</FormLabel>
+                                    <FormControl autoFocus className=' ' type="text" value={this.state.prenom} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup className='row' controlId="email" bsSize="large">
+                                    <FormLabel className='couleur '>Email</FormLabel>
+                                    <FormControl autoFocus className='' type="email" value={this.state.email} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup className='row' controlId="password" bsSize="large">
+                                    <FormLabel className='couleur '>Password</FormLabel>
+                                    <FormControl className=' ' value={this.state.password} onChange={this.handleChange} type="password" />
+                                </FormGroup>
+                                <FormGroup className='row' controlId="cpassword" bsSize="large">
+                                    <FormLabel className='couleur '>Confirm Password</FormLabel>
+                                    <FormControl className=' ' value={this.state.cpassword} onChange={this.handleChange} type="password" />
+                                </FormGroup>
 
-                            <FormGroup  bsSize="large">
-                                <FormLabel id='error'></FormLabel>
-                            </FormGroup>
-                            <FormGroup  bsSize="large">
-                            <Button
-                                className='couleur boutton'
-                                type="submit"
-                                onClick={this.send}
-                            >
-                                Inscription
+                                <FormGroup bsSize="large">
+                                    <FormLabel id='error'></FormLabel>
+                                </FormGroup>
+                                <FormGroup bsSize="large">
+                                    <Button
+                                        className='couleur boutton'
+                                        type="submit"
+                                        onClick={this.send}
+                                    >
+                                        Inscription
                             </Button>
 
-                            <Button
-                                className='couleur boutton'
-                                onClick={this.signin}
-                                type="submit"
-                            >
-                                Se connecter
+                                    <Button
+                                        className='couleur boutton'
+                                        onClick={this.signin}
+                                        type="submit"
+                                    >
+                                        Se connecter
                             </Button>
-                            </FormGroup>
-                        </MDBCol>
-                </MDBContainer>
-            </div>
-              <div class=" container-fluid  "  id='div'>
-                    <Footer />
-                </div> 
+                                </FormGroup>
+                            </MDBCol>
+                        </MDBContainer>
+                    </div>
+                    <div class=" container-fluid  " id='div'>
+                        <Footer />
+                    </div>
+                </div>
             </div>
         )
     }

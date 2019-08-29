@@ -10,6 +10,7 @@ const Articl = mongoose.Schema({
     nbStock: { type: Number, required:true },
     prixStock: { type: Number, required:true},
     stockMin: { type: Number, required: true},
+    user:  { type: Number, required: true}
 
 },
 {

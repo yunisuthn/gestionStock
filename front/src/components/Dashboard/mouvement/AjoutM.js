@@ -99,6 +99,7 @@ export class AjoutM extends React.Component {
       reference: this.state.reference,
       nombreE: this.state.nombreE,
       nombreS: this.state.nombreS,
+      user: localStorage.id
     };
     axios.post('http://localhost:8800/entrer', obj)
       .then(res => console.log(res.data));
@@ -126,16 +127,28 @@ export class AjoutM extends React.Component {
         numFacture: this.state.numFacture,
         fournisseur: this.state.fournisseur,
         reference: this.state.value,
-        nombreE: this.state.nombre
+        nombreE: this.state.nombre,
+        user : localStorage.id
       }
-      localStorage.setItem('myData', localStorage.myData + JSON.stringify(this.tab));
+      ///localStorage.setItem('myData', localStorage.myData + JSON.stringify(this.tab));
       console.log('====================================');
       console.log('this.state.reference === ', this.state.value);
       console.log('====================================');
       if(this.tab === undefined){
         this.tab = [this.essais]
       }else{
-        this.tab.push(this.essais)
+        for (let j = 0; j=this.tab.length; j++){
+          console.log('====================================');
+          console.log("this.tab[j].reference" , this.tab);
+          console.log('====================================');
+          /* if(this.tab[j].reference === this.essais.reference){
+            this.tab[j].nombreE = this.tab[j].nombreE + this.essais.nombreE
+            console.log('=================mitovy===================');
+          }else{
+            console.log('================different====================');
+          } */
+        }
+        //this.tab.push(this.essais)
       }
      
       this.setState({
@@ -152,6 +165,7 @@ export class AjoutM extends React.Component {
         numFacture: this.state.numFacture,
         reference: this.state.value,
         nombreS: this.state.nombre,
+        user: localStorage.id
         //nombreS: this.state.nombreS
       }
       if(this.tabV === undefined){
@@ -192,29 +206,29 @@ export class AjoutM extends React.Component {
 
   ajouter = (e) => {
     e.preventDefault();
-    console.log("button ajouter");
-    if(localStorage.radio === "achat"){
-      console.log('==============achat======================', this.state.tab);
-      for(let i= 0; i<this.state.tab.length; i++){
-        axios.post('http://localhost:8800/entrer', this.state.tab[i])
-            .then(res => console.log(res.data))
-            console.log('==============achat======================', this.state.tab[i]);
-      }
-      this.setState({
-        tab: ""
-      })
-    }else if(localStorage.radio === "vente"){
+    console.log("button ajouter == ", this.state.tab);
+    // if(localStorage.radio === "achat"){
+    //   console.log('==============achat======================', this.state.tab);
+    //   for(let i= 0; i<this.state.tab.length; i++){
+    //     axios.post('http://localhost:8800/entrer', this.state.tab[i])
+    //       .then(res => console.log(res.data))
+    //       console.log('==============this.state.tab.length======================', this.state.tab.length);
+    //   }
+    //   this.setState({
+    //     tab: ""
+    //   })
+    // }else if(localStorage.radio === "vente"){
 
-      console.log('==============achat======================', this.state.tabV);
-      for(let i= 0; i<this.state.tabV.length; i++){
-        axios.post('http://localhost:8800/sortie', this.state.tabV[i])
-            .then(res => console.log(res.data))
-            console.log('==============achat======================', this.state.tabV[i]);
-      }
-      this.setState({
-        tab: ""
-      })
-    }
+    //   console.log('==============achat======================', this.state.tabV);
+    //   for(let i= 0; i<this.state.tabV.length; i++){
+    //     axios.post('http://localhost:8800/sortie', this.state.tabV[i])
+    //         .then(res => console.log(res.data))
+    //         console.log('==============achat======================', this.state.tabV[i]);
+    //   }
+    //   this.setState({
+    //     tabV: ""
+    //   })
+    // }
   }
 
 
@@ -239,7 +253,7 @@ export class AjoutM extends React.Component {
 
 
   componentDidMount() {
-    axios.get(`http://localhost:8800/article`)
+    axios.get(`http://localhost:8800/article/${localStorage.id}`)
       .then(response => {
         console.log('user-article ==== ', response)
         this.setState({ ref: response.data });
@@ -369,9 +383,10 @@ export class AjoutM extends React.Component {
             }
           </div>
           {/*console.log('===============this.state.tab.length=====================', this.state.tab.length)*/}
-          <div className="col-md-4 liste">
+          <div className="col-md-4 liste ">
 
           <form onSubmit={this.ajouter}>
+            <table clasname = "table table-striped table-bordered">
           {
             ((this.state.tab.length > 0) && (localStorage.radio=== "achat")) ? (this.state.tab.map((obj) => {
               return (
@@ -415,7 +430,7 @@ export class AjoutM extends React.Component {
           }
             <input type="submit" value="ajouter" className="btn btn-primary" />
             <input type="button" value="anuler" onClick={this.anuler} />
-
+            </table>
             </form>
           </div>
         </div>

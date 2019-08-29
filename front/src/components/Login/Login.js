@@ -63,11 +63,11 @@ export class Login extends React.Component {
 
                             <FormGroup controlId="email"  bsSize="large">
                                 <FormLabel className='couleur'>Email</FormLabel>
-                                <FormControl autoFocus type="email" value={this.state.email}  className='login'onChange={this.handleChange} />
+                                <FormControl autoFocus type="email" value={this.state.email}  className='login1 couleur'onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup controlId="password" bsSize="large">
                                 <FormLabel className='couleur'>Password</FormLabel>
-                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login' type="password" />
+                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login1 couleur' type="password" />
                             </FormGroup>
 
                             <FormGroup  bsSize="large">
@@ -75,7 +75,7 @@ export class Login extends React.Component {
                             </FormGroup>
                             <Button variant="primary"
                                 onClick={this.send}
-                                className='couleur boutton'
+                                className='couleur boutton '
                                 type="submit"> 
                                  Connexion
                             </Button>

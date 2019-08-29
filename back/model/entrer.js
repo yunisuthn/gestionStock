@@ -7,6 +7,7 @@ const Entrer = mongoose.Schema({
     //date: req.body.date,
     reference: { type: String, required: true},
     nombreE: { type: Number, required: true},
+    user: { type: Number, required: true},
 
 },
 {
