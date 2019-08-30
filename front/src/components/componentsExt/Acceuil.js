@@ -12,8 +12,8 @@ export class Acceuil extends React.Component {
         <div className = ''>
           <NavBar/>  
         </div><img src={moto} 
-     width="100%"
-     height="auto"/>
+          width="100%"
+          height="auto"/>
         <div className = ''>
          {/*  <img className = 'moto' src={moto} alt="Logo" /> */}
           <div className = 'soratraA'>

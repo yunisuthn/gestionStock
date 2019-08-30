@@ -32,7 +32,7 @@ export class Login extends React.Component {
 
             //localStorage.setItem('token', data.data.token, 'id', data.data.id);
             localStorage.setItem('id', data.data.id);
-            window.location = '/stock'  
+            window.location = '/profil'  
         }, function (error) {
             console.log(error);
             document.getElementById("error").innerHTML = "Email ou mot de passe incorrect !"
@@ -92,10 +92,8 @@ export class Login extends React.Component {
                     </MDBRow>
                 </MDBContainer> 
             </div>
-              <div class=" container-fluid  "  id='div'>
-                    <Footer />
-                </div> 
             </div>
+            <Footer />
             </div>
           );
     }

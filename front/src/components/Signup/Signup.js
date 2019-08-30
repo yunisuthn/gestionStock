@@ -121,10 +121,8 @@ export class Signup extends React.Component {
                             </MDBCol>
                         </MDBContainer>
                     </div>
-                    <div class=" container-fluid  " id='div'>
-                        <Footer />
-                    </div>
                 </div>
+                <Footer />
             </div>
         )
     }

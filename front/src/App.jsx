@@ -12,7 +12,8 @@ import {Mouvement } from "./components/Dashboard/Mouvement.js";
 import {AjoutM } from "./components/Dashboard/mouvement/AjoutM.js";
 import {EditM } from "./components/Dashboard/mouvement/EditM.js";
 
-import {Fournisseur } from "./components/Dashboard/Fournisseur.js";
+/* import {Fournisseur } from "./components/Dashboard/Fournisseur.js"; */
+import {Profil } from "./components/Dashboard/Profil.js";
 
 import { Acceuil } from "./components/componentsExt/Acceuil";
 
@@ -29,7 +30,7 @@ class App extends Component {
             <Route exact path="/signup" component={Signup} />
             <PrivateRoute path="/stock" component={Stock} />
 
-            <PrivateRoute path="/fournisseur" component={Fournisseur} />
+            <PrivateRoute path="/profil" component={Profil} />
             <PrivateRoute path="/ajoutStock" component={AjoutS} />
             <PrivateRoute path="/editStock/:id" component={EditS} />
             

@@ -64,7 +64,7 @@ export class Stock extends React.Component {
   }
   render() {
     return (
-      <div className="container-fluid">
+      <div className="">
 
         <NavBar />
         {console.log('localstorage: ', localStorage.id)}
@@ -72,8 +72,8 @@ export class Stock extends React.Component {
           <div className="col-md-2">
             <Dashboard />
           </div>
-            <span className="navbar">
-            <div className="col-md-6 ">
+            <span className="">
+            <div className="col-md-12 stock ">
               <Link to={"/ajoutStock"} className="btn btn-primary">Ajout</Link>
 
               {this.liste()}

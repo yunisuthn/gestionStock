@@ -7,14 +7,17 @@ export default  class Dashboard extends Component {
       <span className="navbar">
         <ul className="nav flex-column">
           <li className="nav-item">
+            <NavLink className="nav-link" to='/profil' activeClassName="active">mon profil</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink className="nav-link" to='/stock' activeClassName="active">stock</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to='/mouvement'  activeClassName="active">mouvement</NavLink>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <NavLink className="nav-link" to='/fournisseur' activeClassName="active">fournisseur</NavLink>
-          </li>
+          </li> */}
         </ul>
       </span>
     );

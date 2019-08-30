@@ -27,7 +27,7 @@ render() {
     <header>
       <div className="site">
         <span className="sitesoratr">
-          <center> GESTIONNEZ VOTRE MAGASIN DU MOTO ICI</center>
+          <center> GEREZ VOTRE MAGASIN DU MOTO ICI</center>
         </span>
 
         <div class="rectangle1"></div>

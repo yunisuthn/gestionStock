@@ -9,7 +9,21 @@ class Footer extends React.Component {
   };
     render() {
         return (
-            <div class="Footer">
+          <footer class="page-footer font-small red">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+              <a href="/"> RAZANAKINIAINA Onisoa Tahina</a>
+              <br/>
+              <a  onClick={this.disconnect} href="">Deconnecter</a>  
+            </div>
+          
+          </footer>
+            
+        );
+    }
+}
+
+export default Footer;
+{/* <div class="Footer">
               <div class="Footer-inner">
                 <a href="/" class="rss-tag-icon" title="RSS"></a>
                   <div class="Footer-text">
@@ -18,22 +32,16 @@ class Footer extends React.Component {
                       RAZANAKINIAINA Onisoa Tahina.<br />
                       <a  onClick={this.disconnect} href="">Deconnecter</a> 
                        {/* <a href="#">Terms of Use</a> | <a href="#">Trademarks</a>
-                            | <a href="#">Privacy Statement</a> */}
+                            | <a href="#">Privacy Statement</a> * /}
                     </p>
                   </div>
               </div>
               <div class="Footer-background">
               {/* <button onClick={this.disconnect}  type="submit" className="btn btn-primary">
                   Se déconnecter
-              </button> */}
+              </button> * /}
               </div>
-            </div>
-        );
-    }
-}
-
-export default Footer;
-
+            </div> */}
 /* import React from 'react';
 
 import API from "../../utils/API";

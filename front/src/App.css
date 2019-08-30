@@ -7,16 +7,52 @@
 }
 .Login{
   margin-top: 15%;
-
+  margin-bottom: 20%;
 }
 
-
+.navbar{
+  left: 5%;
+}
 .Login1{
   margin-top: 10%;
+  margin-bottom: 12% ;
 
 }
 
+.py-3{
+  font-size: 180%;
+}
 
+.stock{
+  mleft: 5%;
+}
+@media (max-width: 1021px) {
+  
+.Login{
+  margin-bottom: 25% !important;
+}
+}
+
+@media (max-width: 439px) {
+  
+  .Login1{
+    margin-bottom: 25% !important;
+  }
+}
+
+@media (max-width: 321px) {
+  
+  .Login1{
+    margin-bottom: 35% !important;
+  }
+}
+
+@media (max-width: 770px, 320px) {
+  
+  .py-3{
+    font-size: 100% !important;
+  }
+}
 @media (max-width: 1037px) {
   
 .Login1{
@@ -39,22 +75,19 @@
     margin-top: 40%;
   
   }
-  }
+}
 
-  @media (max-width: 550px) {
-  
-    .Login{
-      margin-top: 40%;
-    
-    }
-    }
+@media (max-width: 550px) {
+  .Login{
+    margin-top: 40%;
+  }
+}
+
 @media (max-width: 435px) {
-  
   .Login1{
-    margin-top: 25%;
-  
+    margin-top: 25%; 
   }
-  }
+}
 
 html {
   height: 100%;
@@ -68,15 +101,21 @@ body {
   font-size: 15px !important;
 }
 
-.Footer {
-  position: absolute; 
-  bottom: 0;
-  left: 0; 
-  right: 0; 
+.footer {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important; 
+}
+
+/* .footer {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important; 
+  right: 0 !important; 
   background: red;
   font: Arial, Helvetica, sans-serif;
   font-size: 15px !important;
-}
+} */
 
 header {
   position: absolute; 
@@ -178,6 +217,7 @@ li{
 
 .Dashboard{
   margin-top: 200px;
+  margin-bottom: 27%;
 }
 
 .liste{
@@ -197,7 +237,6 @@ th{
 }
 
 @media (max-width: 808px) {
-  
   .sitesoratr{
     font-size: 20px;
     color: #fff;
@@ -210,7 +249,6 @@ td{
 }
 .tab{
   margin-left: 100px;
-
 }
 @media (max-width: 765px, 307px) {
   .tab{

@@ -141,7 +141,7 @@ export class Mouvement extends React.Component {
  */  
   render() {
     return (
-      <div className="container-fluid">
+      <div className="">
         
         <NavBar />
         <div className="row Dashboard">
