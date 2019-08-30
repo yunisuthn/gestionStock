@@ -74,7 +74,7 @@ export class Signup extends React.Component {
                     <div class=" row ">
                         <Navbar />
                     </div>
-                    <div className="Login">
+                    <div className="Login1">
                         <MDBContainer>
                             <MDBCol className='center-block' >
                                 <FormGroup className='row' controlId="nom" bsSize="large">

@@ -61,6 +61,7 @@ export class Login extends React.Component {
                     <MDBRow>
                         <MDBCol md="" >
 
+                            <FormLabel className='couleur1'>Connecter Vous</FormLabel>
                             <FormGroup controlId="email"  bsSize="large">
                                 <FormLabel className='couleur'>Email</FormLabel>
                                 <FormControl autoFocus type="email" value={this.state.email}  className='login1 couleur'onChange={this.handleChange} />

@@ -207,28 +207,28 @@ export class AjoutM extends React.Component {
   ajouter = (e) => {
     e.preventDefault();
     console.log("button ajouter == ", this.state.tab);
-    // if(localStorage.radio === "achat"){
-    //   console.log('==============achat======================', this.state.tab);
-    //   for(let i= 0; i<this.state.tab.length; i++){
-    //     axios.post('http://localhost:8800/entrer', this.state.tab[i])
-    //       .then(res => console.log(res.data))
-    //       console.log('==============this.state.tab.length======================', this.state.tab.length);
-    //   }
-    //   this.setState({
-    //     tab: ""
-    //   })
-    // }else if(localStorage.radio === "vente"){
+    if(localStorage.radio === "achat"){
+      console.log('==============achat======================', this.state.tab);
+      for(let i= 0; i<this.state.tab.length; i++){
+        axios.post('http://localhost:8800/entrer', this.state.tab[i])
+          .then(res => console.log(res.data))
+          console.log('==============this.state.tab.length======================', this.state.tab.length);
+      }
+      this.setState({
+        tab: ""
+      })
+    }else if(localStorage.radio === "vente"){
 
-    //   console.log('==============achat======================', this.state.tabV);
-    //   for(let i= 0; i<this.state.tabV.length; i++){
-    //     axios.post('http://localhost:8800/sortie', this.state.tabV[i])
-    //         .then(res => console.log(res.data))
-    //         console.log('==============achat======================', this.state.tabV[i]);
-    //   }
-    //   this.setState({
-    //     tabV: ""
-    //   })
-    // }
+      console.log('==============achat======================', this.state.tabV);
+      for(let i= 0; i<this.state.tabV.length; i++){
+        axios.post('http://localhost:8800/sortie', this.state.tabV[i])
+            .then(res => console.log(res.data))
+            console.log('==============achat======================', this.state.tabV[i]);
+      }
+      this.setState({
+        tabV: ""
+      })
+    }
   }
 
 

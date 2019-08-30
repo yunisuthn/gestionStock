@@ -3,14 +3,23 @@
 import React from "react";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import moto from '../DSC_0376.JPG';
+import moto from '../DSC_0377a.JPG';
 export class Acceuil extends React.Component {
   
   render() {
     return (
       <div>
-        <NavBar/>  
-          <img className = 'logo col-md-2' src={moto} alt="Logo" />
+        <div className = ''>
+          <NavBar/>  
+        </div><img src={moto} 
+     width="100%"
+     height="auto"/>
+        <div className = ''>
+         {/*  <img className = 'moto' src={moto} alt="Logo" /> */}
+          <div className = 'soratraA'>
+            Vous êtes une magasin du moto, ce site fait pour vous. Vous pouvez gestionnez votre stock. 
+          </div>
+        </div>
         <Footer/>
       </div>
     );
