@@ -29,7 +29,7 @@ export class EditS extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8800/article/'+this.props.match.params.id)
+    axios.get('http://localhost:8800/update/'+this.props.match.params.id)
       .then(response => {
           this.setState({ 
               nomPiece: response.data.nomPiece,
@@ -37,7 +37,7 @@ export class EditS extends React.Component {
               nbStock: response.data.nbStock,
               stockMin: response.data.stockMin
           });
-          console.log('this.props  === ', response.data.nomPiece)
+          console.log('this.props  === ', this.props.match.params.id)
             
       })
       .catch(function (error) {
@@ -100,7 +100,7 @@ export class EditS extends React.Component {
             <div className="col-md-2">
               <Dashboard/>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 tab">
 
                 <div style={{ marginTop: 10 }}>
                     <h3>Update New Business</h3>

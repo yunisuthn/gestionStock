@@ -8,6 +8,7 @@ const EntrerSortie = mongoose.Schema({
     //date: req.body.date,
     reference: { type: String, required: true},
     nombre: { type: Number, required: true},
+    user: { type: Number, required: true},
 
 },
 {

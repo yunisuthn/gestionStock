@@ -32,7 +32,7 @@ export class Login extends React.Component {
 
             //localStorage.setItem('token', data.data.token, 'id', data.data.id);
             localStorage.setItem('id', data.data.id);
-            window.location = '/stock'  
+            window.location = '/profil'  
         }, function (error) {
             console.log(error);
             document.getElementById("error").innerHTML = "Email ou mot de passe incorrect !"
@@ -57,19 +57,18 @@ export class Login extends React.Component {
           <Navbar />
           </div>
             <div className="Login">
-                <div className=' col-md-8'>
-                </div>
                 <MDBContainer>
                     <MDBRow>
-                        <MDBCol md="6" className='login' >
+                        <MDBCol md="" >
 
+                            <FormLabel className='couleur1 form-horizontal'>Connecter Vous</FormLabel>
                             <FormGroup controlId="email"  bsSize="large">
-                                <FormLabel className='couleur'>Email</FormLabel>
-                                <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange} />
+                                <FormLabel className='couleur control-label'>Email</FormLabel>
+                                <FormControl autoFocus type="email" value={this.state.email}  className='login1 couleur form-control'onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup controlId="password" bsSize="large">
-                                <FormLabel className='couleur'>Password</FormLabel>
-                                <FormControl value={this.state.password} onChange={this.handleChange} type="password" />
+                                <FormLabel className='couleur control-label'>Password</FormLabel>
+                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login1 couleur form-control' type="password" />
                             </FormGroup>
 
                             <FormGroup  bsSize="large">
@@ -77,7 +76,7 @@ export class Login extends React.Component {
                             </FormGroup>
                             <Button variant="primary"
                                 onClick={this.send}
-                                className='couleur boutton'
+                                className='couleur boutton '
                                 type="submit"> 
                                  Connexion
                             </Button>
@@ -91,12 +90,10 @@ export class Login extends React.Component {
 
                         </MDBCol>
                     </MDBRow>
-                </MDBContainer>
+                </MDBContainer> 
             </div>
-              <div class=" container-fluid  "  id='div'>
-                    <Footer />
-                </div> 
             </div>
+            <Footer />
             </div>
           );
     }

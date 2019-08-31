@@ -33,7 +33,7 @@ export class Mouvement extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get(`http://localhost:8800/entrerSortie`)
+    axios.get(`http://localhost:8800/entrerSortie/${localStorage.id}`)
       .then(response => {
         console.log('user-article ==== ', response)
         this.setState({ entrer: response.data });
@@ -46,15 +46,15 @@ export class Mouvement extends React.Component {
 
   liste() {
     return (
-      
-      <table className="table">
+      <font size="16">
+      <table className="table table-hover table-responsive table-striped  table-bordered"> {/* table table-striped table-bordered"> */}
         <thead>
           <tr>
-            <th>TYPE</th>
-            <th>FACTURE</th>
-            <th>FOURNISSEUR</th>
-            <th>REFERENCE</th>
-            <th>NOMBRE</th>
+            <th><font size="2">TYPE</font></th>
+            <th><font size="2">FACTURE</font></th>
+            <th><font size="2">FOURNISSEUR</font></th>
+            <th><font size="2">REFERENCE</font></th>
+            <th><font size="2">NOMBRE</font></th>
           </tr>
         </thead>
         <tbody>
@@ -63,20 +63,17 @@ export class Mouvement extends React.Component {
 
               return (
                 <tr key={obj._id}>
-                  <td>{obj.type}</td>
-                  <td>{obj.numFacture}</td>
-                  <td>{obj.fournisseur}</td>
-                  <td>{obj.reference}</td>
-                  <td>{obj.nombre}</td>
-                  <td>
-                    {obj.stockMin}
-                  </td>
+                  <td><font size="2">{obj.type}</font></td>
+                  <td><font size="2">{obj.numFacture}</font></td>
+                  <td><font size="2">{obj.fournisseur}</font></td>
+                  <td><font size="2">{obj.reference}</font></td>
+                  <td><font size="2">{obj.nombre}</font></td>
                 </tr>)
 
             })) : ('')
           }
         </tbody>
-      </table>)
+      </table></font>)
   }
 
 
@@ -144,16 +141,14 @@ export class Mouvement extends React.Component {
  */  
   render() {
     return (
-      <div className="container-fluid">
+      <div className="">
         
         <NavBar />
         <div className="row Dashboard">
           <div className="col-md-2">
             <Dashboard />
           </div>
-          <div className="col-md-6">
-{console.log('====================================' , localStorage.id)}
-{/* 		        <button onClick={()=>this.ajouter()} className={'ajout btn btn-success'}> Ajouter</button> */}
+          <div className="col-md-6 tab">
             <Link to={"/ajoutMouvement"} className="btn btn-primary">Ajout</Link>
 
             {this.liste()}

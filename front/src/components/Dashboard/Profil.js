@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 
-export class Fournisseur extends React.Component {
+export class Profil extends React.Component {
   // disconnect = () => {
   //   API.logout();
   //   window.location = "/";
@@ -13,15 +13,16 @@ export class Fournisseur extends React.Component {
   render() {
     return (
 
-      <div className="container-fluid">
+      <div className="">
         
         <NavBar />
-        <div className="Dashboard">
+        <div className="row Dashboard">
           <div className="col-md-2">
             <Dashboard />
           </div>
           <div className="col-md-6">
 
+            fournisseur
           </div>
         </div>
         <Footer />

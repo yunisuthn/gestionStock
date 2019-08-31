@@ -27,8 +27,12 @@ render() {
     <header>
       <div className="site">
         <span className="sitesoratr">
-          <center> GESTIONNEZ VOTRE MAGASIN DU MOTO ICI</center>
+          <center> GEREZ VOTRE MAGASIN DU MOTO ICI</center>
         </span>
+
+        <div class="rectangle1"></div>
+        <div class="rectangle"></div>
+        <div class="rectangle2"></div>
         {/* <Link to="/connecter" className='dashbrd'>se connecter</Link> */}
       </div>
     </header>

@@ -15,7 +15,7 @@ export class Stock extends React.Component {
     this.state = { profil: [] };
   }
   componentDidMount() {
-    axios.get(`http://localhost:8800/article`)
+    axios.get(`http://localhost:8800/article/${localStorage.id}`)
       .then(response => {
         //console.log('user-article ==== ', response)
         this.setState({ profil: response.data });
@@ -27,22 +27,16 @@ export class Stock extends React.Component {
 
 
   liste() {
-    /*var msg;
-    if (this.state.checked) {
-        msg = "checked";
-    } else {
-        msg = "unchecked";
-    }*/
     return (
-      <table className="table">
+      <table className="table table-hover table-responsive table-striped  table-bordered ">{/* //table table-striped table-bordered"> */}
         <thead>
           <tr>
-            <th>NOM PIECE</th>
-            <th>PRIX UNITAIRE</th>
-            <th>NOMBRE STOCK</th>
-            <th>PRIX STOCK</th>
-            <th>STOCK MINIMUM</th>
-            <th>ACTION</th>
+            <th><font size="2">NOM PIECE</font></th>
+            <th><font size="2">PRIX UNITAIRE</font></th>
+            <th><font size="2">NOMBRE STOCK</font></th>
+            <th><font size="2">PRIX STOCK</font></th>
+            <th><font size="2">STOCK MINIMUM</font></th>
+            <th><font size="2">ACTION</font></th>
           </tr>
         </thead>
         <tbody>
@@ -51,12 +45,12 @@ export class Stock extends React.Component {
 
               return (
                 <tr key={obj._id}>
-                  <td>{obj.nomPiece}</td>
-                  <td>{obj.prixUnit}</td>
-                  <td>{obj.nbStock}</td>
-                  <td>{obj.prixStock}</td>
-                  <td>
-                    {obj.stockMin}
+                  <td><font size="2">{obj.nomPiece}</font></td>
+                  <td><font size="2">{obj.prixUnit}</font></td>
+                  <td><font size="2">{obj.nbStock}</font></td>
+                  <td><font size="2">{obj.prixStock}</font></td>
+                  <td><font size="2">
+                    {obj.stockMin}</font>
                   </td>
                   <td>
                     <Link to={"/editStock/" + obj._id} className="btn btn-primary">Edit</Link>
@@ -70,7 +64,7 @@ export class Stock extends React.Component {
   }
   render() {
     return (
-      <div className="container-fluid">
+      <div className="">
 
         <NavBar />
         {console.log('localstorage: ', localStorage.id)}
@@ -78,11 +72,13 @@ export class Stock extends React.Component {
           <div className="col-md-2">
             <Dashboard />
           </div>
-          <div className="col-md-6">
-            <Link to={"/ajoutStock"} className="btn btn-primary">Ajout</Link>
+            <span className="">
+            <div className="col-md-12 stock ">
+              <Link to={"/ajoutStock"} className="btn btn-primary">Ajout</Link>
 
-            {this.liste()}
-          </div>
+              {this.liste()}
+            </div>
+            </span>
         </div>
         <Footer />
 
