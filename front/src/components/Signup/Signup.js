@@ -76,26 +76,26 @@ export class Signup extends React.Component {
                     </div>
                     <div className="Login1">
                         <MDBContainer>
-                            <MDBCol className='center-block' >
+                            <MDBCol className='center-block form-horizontal' >
                                 <FormGroup className='row' controlId="nom" bsSize="large">
-                                    <FormLabel className='couleur'>Nom</FormLabel>
-                                    <FormControl autoFocus className=' ' type="text" value={this.state.nom} onChange={this.handleChange} />
+                                    <FormLabel className='couleur control-label'>Nom</FormLabel>
+                                    <FormControl autoFocus className='form-control ' type="text" value={this.state.nom} onChange={this.handleChange} />
                                 </FormGroup>
                                 <FormGroup className='row' controlId="prenom" bsSize="large">
-                                    <FormLabel className='couleur '>Prénom</FormLabel>
-                                    <FormControl autoFocus className=' ' type="text" value={this.state.prenom} onChange={this.handleChange} />
+                                    <FormLabel className='couleur control-label'>Prénom</FormLabel>
+                                    <FormControl autoFocus className=' form-control' type="text" value={this.state.prenom} onChange={this.handleChange} />
                                 </FormGroup>
                                 <FormGroup className='row' controlId="email" bsSize="large">
-                                    <FormLabel className='couleur '>Email</FormLabel>
-                                    <FormControl autoFocus className='' type="email" value={this.state.email} onChange={this.handleChange} />
+                                    <FormLabel className='couleur control-label'>Email</FormLabel>
+                                    <FormControl autoFocus className='form-control' type="email" value={this.state.email} onChange={this.handleChange} />
                                 </FormGroup>
                                 <FormGroup className='row' controlId="password" bsSize="large">
-                                    <FormLabel className='couleur '>Password</FormLabel>
-                                    <FormControl className=' ' value={this.state.password} onChange={this.handleChange} type="password" />
+                                    <FormLabel className='couleur control-label'>Password</FormLabel>
+                                    <FormControl className=' form-control' value={this.state.password} onChange={this.handleChange} type="password" />
                                 </FormGroup>
                                 <FormGroup className='row' controlId="cpassword" bsSize="large">
-                                    <FormLabel className='couleur '>Confirm Password</FormLabel>
-                                    <FormControl className=' ' value={this.state.cpassword} onChange={this.handleChange} type="password" />
+                                    <FormLabel className='couleur control-label'>Confirm Password</FormLabel>
+                                    <FormControl className='form-control ' value={this.state.cpassword} onChange={this.handleChange} type="password" />
                                 </FormGroup>
 
                                 <FormGroup bsSize="large">

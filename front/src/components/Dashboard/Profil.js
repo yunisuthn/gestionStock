@@ -14,20 +14,22 @@ export class Profil extends React.Component {
     return (
 
       <div className="">
-        
+
         <NavBar />
+        {console.log('localstorage: ', localStorage.id)}
         <div className="row Dashboard">
           <div className="col-md-2">
             <Dashboard />
           </div>
-          <div className="col-md-6">
-
-            fournisseur
-          </div>
+            <span className="">
+            <div className="col-md-12 stock ">
+              
+            </div>
+            </span>
         </div>
         <Footer />
 
-      </div>
+</div>
 
     );
   }

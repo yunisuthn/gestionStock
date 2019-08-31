@@ -61,14 +61,14 @@ export class Login extends React.Component {
                     <MDBRow>
                         <MDBCol md="" >
 
-                            <FormLabel className='couleur1'>Connecter Vous</FormLabel>
+                            <FormLabel className='couleur1 form-horizontal'>Connecter Vous</FormLabel>
                             <FormGroup controlId="email"  bsSize="large">
-                                <FormLabel className='couleur'>Email</FormLabel>
-                                <FormControl autoFocus type="email" value={this.state.email}  className='login1 couleur'onChange={this.handleChange} />
+                                <FormLabel className='couleur control-label'>Email</FormLabel>
+                                <FormControl autoFocus type="email" value={this.state.email}  className='login1 couleur form-control'onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup controlId="password" bsSize="large">
-                                <FormLabel className='couleur'>Password</FormLabel>
-                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login1 couleur' type="password" />
+                                <FormLabel className='couleur control-label'>Password</FormLabel>
+                                <FormControl value={this.state.password} onChange={this.handleChange}  className='login1 couleur form-control' type="password" />
                             </FormGroup>
 
                             <FormGroup  bsSize="large">

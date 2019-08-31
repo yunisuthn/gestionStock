@@ -28,7 +28,7 @@ export class Stock extends React.Component {
 
   liste() {
     return (
-      <table className=" table-bordered ">{/* //table table-striped table-bordered"> */}
+      <table className="table table-hover table-responsive table-striped  table-bordered ">{/* //table table-striped table-bordered"> */}
         <thead>
           <tr>
             <th><font size="2">NOM PIECE</font></th>
@@ -72,13 +72,11 @@ export class Stock extends React.Component {
           <div className="col-md-2">
             <Dashboard />
           </div>
-            <span className="">
-            <div className="col-md-12 stock ">
+            <div className="col-md-10 stock ">
               <Link to={"/ajoutStock"} className="btn btn-primary">Ajout</Link>
 
               {this.liste()}
             </div>
-            </span>
         </div>
         <Footer />
 

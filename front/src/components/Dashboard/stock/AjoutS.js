@@ -81,13 +81,13 @@ export class AjoutS extends React.Component {
             <div className="col-md-2">
               <Dashboard/>
             </div>
-            <div className="col-md-6 tab">
+            <div className="col-md-6 tab ">
 
-              <div style={{ marginTop: 10 }}>
+              <div style={{ marginTop: 10 }} className= "form-horizontal">
                     <h3>AJOUTER UN NOUVEAU STOCK</h3>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label>nomPiece:  </label>
+                            <label className=" control-label">nomPiece:  </label>
                             <input 
                               type="text" 
                               className="form-control" 
@@ -96,7 +96,7 @@ export class AjoutS extends React.Component {
                               />
                         </div>
                         <div className="form-group">
-                            <label>prixUnit: </label>
+                            <label className=" control-label">prixUnit: </label>
                             <input type="text" 
                               className="form-control"
                               value={this.state.prixUnit}
@@ -104,7 +104,7 @@ export class AjoutS extends React.Component {
                               />
                         </div>
                         <div className="form-group">
-                            <label>stockMin: </label>
+                            <label className=" control-label">stockMin: </label>
                             <input type="text" 
                               className="form-control"
                               value={this.state.stockMin}
@@ -112,7 +112,7 @@ export class AjoutS extends React.Component {
                               />
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Register Business" className="btn btn-primary"/>
+                            <input type="submit" value="Ajout Stock" className="btn btn-primary"/>
                         </div>
                     </form>
                 </div>

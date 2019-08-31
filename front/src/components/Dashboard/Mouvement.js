@@ -47,7 +47,7 @@ export class Mouvement extends React.Component {
   liste() {
     return (
       <font size="16">
-      <table className="table table-bordered"> {/* table table-striped table-bordered"> */}
+      <table className="table table-hover table-responsive table-striped  table-bordered"> {/* table table-striped table-bordered"> */}
         <thead>
           <tr>
             <th><font size="2">TYPE</font></th>

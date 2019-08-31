@@ -137,7 +137,7 @@ export class AjoutM extends React.Component {
       if(this.tab === undefined){
         this.tab = [this.essais]
       }else{
-        for (let j = 0; j=this.tab.length; j++){
+        /* for (let j = 0; j=this.tab.length; j++){
           console.log('====================================');
           console.log("this.tab[j].reference" , this.tab);
           console.log('====================================');
@@ -146,9 +146,9 @@ export class AjoutM extends React.Component {
             console.log('=================mitovy===================');
           }else{
             console.log('================different====================');
-          } */
-        }
-        //this.tab.push(this.essais)
+          } * /
+        } */
+        this.tab.push(this.essais)
       }
      
       this.setState({

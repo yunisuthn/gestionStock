@@ -4,7 +4,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-          <footer class="page-footer font-small red">
+          <footer class="page-footer font-small ">
           
             <div class="footer-copyright text-center py-3">© 2019 Copyright:
               <a href="/"> RAZANAKINIAINA Onisoa Tahina</a>

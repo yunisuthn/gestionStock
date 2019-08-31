@@ -11,13 +11,17 @@ export class Acceuil extends React.Component {
       <div>
         <div className = ''>
           <NavBar/>  
-        </div><img src={moto} 
+        </div>
+        <img src={moto} 
           width="100%"
-          height="auto"/>
+          height="auto" className="img"/>
         <div className = ''>
          {/*  <img className = 'moto' src={moto} alt="Logo" /> */}
-          <div className = 'soratraA'>
-            Vous êtes une magasin du moto, ce site fait pour vous. Vous pouvez gestionnez votre stock. 
+          <div className = 'soratraA '>
+            VOUS  AVEZ UNE MAGASIN DU MOTO, CE SITE FAIT POUR VOUS.<br/>
+            VOUS POUVEZ GESTIONNEZ VOTRE MAGASIN OU VOUS ETES AVEC CE SITE.<br/>
+            CONTACT: yunis.thn@gmail.com
+
           </div>
         </div>
         <Footer/>
